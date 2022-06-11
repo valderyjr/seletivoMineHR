@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './Home.module.scss'
 import FilterButton from '../../components/FilterButton'
+import BarGraph from '../../components/BarGraph'
 
 function Home() {
 	return (
@@ -13,7 +14,8 @@ function Home() {
 				<FilterButton />
 			</header>
 			<section className={style.principal__graficos}>
-				<section className={style.grafico}>Aqui ficarão os gráficos</section>
+				{/* <section className={style.grafico}>Aqui ficarão os gráficos</section> */}
+				<section className={style.grafico}><BarGraph /></section>
 				<section className={style.grafico}>Aqui ficarão os gráficos</section>
 			</section>
 		</main>
