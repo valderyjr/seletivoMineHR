@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactApexCharts from 'react-apexcharts'
+import IconeInfo from '../../assets/iconInfo.svg'
 
 function ScatterGraph() {
 	const [scatterGraph, setScatterGraph] = useState({
@@ -31,13 +32,13 @@ function ScatterGraph() {
 						zoom: false,
 						zoomin: false,
 						zoomout: false,
-						// customIcons: [{
-						// 	icon: `<div class='apexcharts-toolbar-custom-icon'><img src=${IconeInfo} alt="Ícone de informação"/></div>`,
-						// 	index: -1,
-						// 	title: 'Icone de informação',
-						// 	class: 'custom-icon',
-						// 	click: () => window.open('https://www.linkedin.com/pulse/diagrama-de-dispers%C3%A3o-cristiano-aparecido-pinto/?originalSubdomain=pt', '_blank')
-						// }]
+						customIcons: [{
+							icon: `<div class='apexcharts-toolbar-custom-icon'><img src=${IconeInfo} alt="Ícone de informação"/></div>`,
+							index: -1,
+							title: 'Icone de informação',
+							class: 'info',
+							click: () => window.open('https://www.linkedin.com/pulse/diagrama-de-dispers%C3%A3o-cristiano-aparecido-pinto/?originalSubdomain=pt', '_blank')
+						}]
 					}
 				}
 			},
@@ -117,7 +118,7 @@ function ScatterGraph() {
 					},
 					chart: {
 						toolbar: {
-							offsetX: -15
+							offsetX: 10
 						}
 					}
 			}

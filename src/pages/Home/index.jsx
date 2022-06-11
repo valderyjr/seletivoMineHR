@@ -1,8 +1,10 @@
 import React from 'react'
-import style from './Home.module.scss'
 import FilterButton from '../../components/FilterButton'
 import BarGraph from '../../components/BarGraph'
 import ScatterGraph from '../../components/ScatterGraph'
+import style from './Home.module.scss'
+// Importando arquivo que altera estilos da lib apexCharts
+import '../../styles/_graphicStyle.scss';
 
 function Home() {
 	return (

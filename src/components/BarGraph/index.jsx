@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ReactApexCharts from 'react-apexcharts'
-import './barGraph.scss';
+import IconeInfo from '../../assets/iconInfo.svg'
 
 function BarGraph() {
 	const [barGraph, setBarGraph] = useState({
@@ -21,7 +21,16 @@ function BarGraph() {
 				toolbar: {
 					show: true,
 					offsetY: 15,
-					offsetX: -30
+					offsetX: -30,
+					tools: {
+						customIcons: [{
+							icon: `<div class='apexcharts-toolbar-custom-icon'><img src=${IconeInfo} alt="Ícone de informação"/></div>`,
+							index: -1,
+							title: 'Icone de informação',
+							class: 'info',
+							click: () => window.open('https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html?edicao=27257&t=resultados', '_blank')
+						}]
+					}
 				}
       },
       plotOptions: {
@@ -85,7 +94,7 @@ function BarGraph() {
 					},
 					chart: {
 						toolbar: {
-							offsetX: -15
+							offsetX: 10
 						}
 					}
 				}
