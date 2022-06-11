@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.principal {
+	width: 100%;
+	height: 85vh;
+	background-color: $cinza-claro;
+	padding: 1rem $padding-lateral;
+	color: $roxo-escuro;
+	text-align: center;
+	@media (max-width: 450px) {
+		padding: 1rem $padding-lateral-sm;
+	}
+
+	.icon {
+		margin-top: 1rem;
+		cursor: pointer;
+	}
+
+	h2 {
+		margin-top: 1rem;
+		font-size: min(6vw, 40px);
+	}
+}
