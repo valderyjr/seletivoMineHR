@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.principal {
+	width: 100%;
+	min-height: 85vh;
+	background-color: $cinza-claro;
+	padding: 1rem $padding-lateral;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	color: $roxo-escuro;
+
+	@media (max-width: 450px) {
+		padding: 1rem $padding-lateral-sm;
+	}
+
+	&__header {
+		height: 20%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.header {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: .5rem;
+
+			h3 {
+				color: $cinza-escuro;
+				font-weight: 500;
+			}
+		}
+
+		button {
+			height: fit-content;
+		}
+	}
+	
+	&__graficos {
+		height: 80%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		justify-content: center;
+		grid-auto-rows: max(40vh, 380px);
+		padding: 1rem 0;
+		gap: 1rem;
+
+		.grafico {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 2px rgb(0,0,0,0.2);
+		}
+	}
+}
