@@ -35,8 +35,8 @@ function BarGraph() {
 			},
 			grid: {
 				padding: {
-					left: 20,
-					right: 20,
+					left: 50,
+					right: 30,
 					top: 15,
 					bottom: 15
 				}
@@ -55,7 +55,6 @@ function BarGraph() {
 			title: {
 				text: ['Renda média do brasileiro', 'de acordo com a escolaridade'],
 				align: 'left',
-				margin: 10,
 				offsetY: 10,
 				offsetX: 10,
 				style: {
@@ -73,7 +72,7 @@ function BarGraph() {
 				}
 			},
 			responsive: [{
-				breakpoint: 700,
+				breakpoint: 450,
 				options: {
 					grid: {
 						padding: {
@@ -83,6 +82,11 @@ function BarGraph() {
 					},
 					xaxis: {
 						tickAmount: 3
+					},
+					chart: {
+						toolbar: {
+							offsetX: -15
+						}
 					}
 				}
 			}]
@@ -90,7 +94,13 @@ function BarGraph() {
 	})
 	return (
 		<>
-			<ReactApexCharts height={'100%'} width={'100%'} type='bar' series={barGraph.series} options={barGraph.options}/>
+			<ReactApexCharts 
+			height={'100%'} 
+			width={'100%'} 
+			type='bar' 
+			series={barGraph.series} 
+			options={barGraph.options}
+			/>
 		</>
 	)
 }

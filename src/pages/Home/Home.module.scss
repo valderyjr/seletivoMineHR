@@ -26,9 +26,14 @@
 			justify-content: center;
 			gap: .5rem;
 
+			h2 {
+				font-size: min(5vw, 28px);
+			}
+
 			h3 {
 				color: $cinza-escuro;
 				font-weight: 500;
+				font-size: min(3.5vw, 18px);
 			}
 		}
 
@@ -40,7 +45,7 @@
 	&__graficos {
 		height: 80%;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(90vw, 450px), 1fr));
 		justify-content: center;
 		grid-auto-rows: max(40vh, 380px);
 		padding: 1rem 0;
