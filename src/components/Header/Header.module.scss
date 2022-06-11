@@ -2,14 +2,18 @@
 
 .cabecalho {
 	width: 100%;
-	height: 20vh;
+	height: 15vh;
 	background-color: $roxo-escuro;
 	display: flex;
+	padding: 0 $padding-lateral;
+
+	@media (max-width: 450px) {
+		padding: 0 $padding-lateral-sm;
+	}
 
 	img {
 		height: 100%;
 		max-width: 50%;
 		object-fit: contain;
-		// background-color: black;
 	}
 }
