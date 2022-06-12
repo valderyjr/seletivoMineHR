@@ -19,6 +19,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-bottom: 2rem;
 
 		.header {
 			display: flex;
@@ -36,10 +37,6 @@
 				font-size: min(3.5vw, 18px);
 			}
 		}
-
-		button {
-			height: fit-content;
-		}
 	}
 	
 	&__graficos {
@@ -52,6 +49,7 @@
 		gap: 1rem;
 
 		.grafico {
+			position: relative;
 			background-color: white;
 			border-radius: 10px;
 			box-shadow: 0px 0px 10px 2px rgb(0,0,0,0.2);

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import ReactApexCharts from 'react-apexcharts'
 import IconeInfo from '../../assets/iconInfo.svg'
+import InfoBox from '../InfoBox'
 
 function ScatterGraph() {
+	const [active, setActive] = useState(false)
 	const [scatterGraph, setScatterGraph] = useState({
 		series: [{
 			name: 'Turma A',
@@ -37,7 +39,7 @@ function ScatterGraph() {
 							index: -1,
 							title: 'Icone de informação',
 							class: 'info',
-							click: () => window.open('https://www.linkedin.com/pulse/diagrama-de-dispers%C3%A3o-cristiano-aparecido-pinto/?originalSubdomain=pt', '_blank')
+							click: () => setActive(currentSate => !currentSate)
 						}]
 					}
 				}
@@ -68,45 +70,45 @@ function ScatterGraph() {
 					formatter: peso => `${peso} kg`
 				},
 				x: {
-					formatter: alturaCentimetros => `${(alturaCentimetros/100).toFixed(2)}m`
+					formatter: alturaCentimetros => `${(alturaCentimetros / 100).toFixed(2)}m`
 				}
-		},
-		legend: {
-			itemMargin: {
-				horizontal: 10
 			},
-			horizontalAlign: "center",
-			position: "top"
-		},
-		xaxis: {
-			labels: {
-				formatter: alturaCentimetros => `${(alturaCentimetros/100).toFixed(2)}m`,
+			legend: {
+				itemMargin: {
+					horizontal: 10
+				},
+				horizontalAlign: "center",
+				position: "top"
 			},
-			tickAmount: 3,
-			title: {
-				text: 'Peso'
+			xaxis: {
+				labels: {
+					formatter: alturaCentimetros => `${(alturaCentimetros / 100).toFixed(2)}m`,
+				},
+				tickAmount: 3,
+				title: {
+					text: 'Peso'
+				},
 			},
-		},
-		yaxis: {
-			axisBorder: {
-				color: '#e0e0e0',
-				show: true,
-				width: 2,
-				offsetX: -70
+			yaxis: {
+				axisBorder: {
+					color: '#e0e0e0',
+					show: true,
+					width: 2,
+					offsetX: -70
+				},
+				labels: {
+					formatter: peso => `${peso} kg`,
+					offsetX: 40
+				},
+				tickAmount: 4,
+				title: {
+					text: 'Altura',
+					offsetX: -20
+				}
 			},
-			labels: {
-				formatter: peso => `${peso} kg`,
-				offsetX: 40
-			},
-			tickAmount: 4,
-			title: {
-				text: 'Altura',
-				offsetX: -20
-			}
-		},
-		responsive: [{
-			breakpoint: 450,
-			options: {
+			responsive: [{
+				breakpoint: 450,
+				options: {
 					xaxis: {
 						tickAmount: 2
 					},
@@ -121,18 +123,22 @@ function ScatterGraph() {
 							offsetX: 10
 						}
 					}
-			}
-		}]
+				}
+			}]
 		}
 	})
 	return (
 		<>
-			<ReactApexCharts 
-			height={'100%'} 
-			width={'100%'} 
-			type='scatter' 
-			series={scatterGraph.series} 
-			options={scatterGraph.options} 
+			{active &&
+				<InfoBox refName='Linkedin'
+					link='https://www.linkedin.com/pulse/diagrama-de-dispers%C3%A3o-cristiano-aparecido-pinto/?originalSubdomain=pt' />
+			}
+			<ReactApexCharts
+				height={'100%'}
+				width={'100%'}
+				type='scatter'
+				series={scatterGraph.series}
+				options={scatterGraph.options}
 			/>
 		</>
 	)

@@ -1,16 +1,18 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import ReactApexCharts from 'react-apexcharts'
 import IconeInfo from '../../assets/iconInfo.svg'
+import InfoBox from '../InfoBox'
 
 function BarGraph() {
+	const [active, setActive] = useState(false)
 	const [barGraph, setBarGraph] = useState({
 		series: [{
-      name: 'Renda média',
+			name: 'Renda média',
 			data: [918, 1223, 1472, 1368, 1788, 2242, 5108]
-    }],
-    options: {
-      chart: {
-        type: 'bar',
+		}],
+		options: {
+			chart: {
+				type: 'bar',
 				dropShadow: {
 					color: '#4b324b',
 					left: 5,
@@ -28,17 +30,17 @@ function BarGraph() {
 							index: -1,
 							title: 'Icone de informação',
 							class: 'info',
-							click: () => window.open('https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html?edicao=27257&t=resultados', '_blank')
+							click: () => setActive(currentState => !currentState)
 						}]
 					}
 				}
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 5,
-          horizontal: true,
-        }
-      },
+			},
+			plotOptions: {
+				bar: {
+					borderRadius: 5,
+					horizontal: true,
+				}
+			},
 			fill: {
 				colors: '#5c3f5c'
 			},
@@ -50,10 +52,10 @@ function BarGraph() {
 					bottom: 15
 				}
 			},
-      dataLabels: {
-        enabled: false
-      },
-      xaxis: {
+			dataLabels: {
+				enabled: false
+			},
+			xaxis: {
 				categories: [['Sem', 'instrução'], ['Fundamental', 'incompleto'], ['Fundamental', 'completo'], ['Médio', 'incompleto'], ['Médio', 'completo'], ['Superior', 'incompleto'], ['Superior', 'completo']],
 				labels: {
 					show: true,
@@ -99,16 +101,19 @@ function BarGraph() {
 					}
 				}
 			}]
-    }
+		}
 	})
 	return (
 		<>
-			<ReactApexCharts 
-			height={'100%'} 
-			width={'100%'} 
-			type='bar' 
-			series={barGraph.series} 
-			options={barGraph.options}
+			{active &&
+				<InfoBox refName='IBGE' link='https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html?edicao=27257&t=resultados' />
+			}
+			<ReactApexCharts
+				height={'100%'}
+				width={'100%'}
+				type='bar'
+				series={barGraph.series}
+				options={barGraph.options}
 			/>
 		</>
 	)
