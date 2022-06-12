@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from './InfoBox.module.scss';
 
 function InfoBox({ refName, link }) {
