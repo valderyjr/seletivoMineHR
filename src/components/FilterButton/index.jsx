@@ -29,7 +29,7 @@ function FilterButton({changeFilteredList}) {
 			{isOpen && 
 			<div className={style.filtro__lista}>
 				{filterItems.map(item => (
-					<option className={style.item} key={item.value} value={item.value} onClick={() => changeFilteredList(item.value) & setIsOpen(false)}>{item.title}</option>
+					<p className={style.item} key={item.value} value={item.value} onClick={() => changeFilteredList(item.value) & setIsOpen(false)}>{item.title}</p>
 					))}
 			</div>
 			}

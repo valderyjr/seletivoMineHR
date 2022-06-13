@@ -40,14 +40,6 @@ function Home() {
 				</div>
 				<FilterButton changeFilteredList={changeFilteredList}/>
 			</header>
-			{/* <section className={style.principal__graficos}>
-				<section className={style.grafico}>
-					<BarGraph />
-				</section>
-				<section className={style.grafico}>
-					<ScatterGraph />
-				</section>
-			</section> */}
 			<section className={style.principal__graficos}>
 				{filteredList.map(graphItem => (
 					<section className={style.grafico} key={graphItem.id}>
